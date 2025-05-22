@@ -27,11 +27,11 @@ public class Schedule {
 
     private LocalDateTime createdAt;
 
-
+    // 생성자를 만들어주지 않아서 500 서버 에러 났었음
     public Schedule(String name, String content) {
         this.name = name;
         this.content = content;
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now(); //처음에 null 값이 나왔는데 이 코드로 해결
     }
 
     //service 클래스에서 필요함
