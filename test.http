@@ -1,0 +1,26 @@
+POST localhost:8080/schedules
+Content-Type: application/json
+
+{
+  "name" : "재훈",
+  "content" : "안녕하세요"
+}
+
+###
+GET localhost:8080/schedules/1
+
+###
+GET localhost:8080/schedules
+
+###
+PUT localhost:8080/schedules/1
+Content-Type: application/json
+
+{
+  "name" : "재훈",
+  "content": "안녕하세요2"
+}
+
+###
+DELETE localhost:8080/schedules/1
+
