@@ -5,12 +5,16 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Entity
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Schedule {
 
     @Id // 기본키(엔티티 어노테이션을 붙이고 아이디를 안 만들면 오류남)
@@ -25,13 +29,18 @@ public class Schedule {
 
     private String content;
 
+    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 
     // 생성자를 만들어주지 않아서 500 서버 에러 났었음
     public Schedule(String name, String content) {
         this.name = name;
         this.content = content;
-        this.createdAt = LocalDateTime.now(); //처음에 null 값이 나왔는데 이 코드로 해결
+        //this.createdAt = LocalDateTime.now(); //처음에 null 값이 나왔는데 이 코드로 해결
     }
 
     //service 클래스에서 필요함

@@ -12,12 +12,14 @@ public class ScheduleResponse {
     private String name;
     private String content;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-    public ScheduleResponse(Long id, String name, String content, LocalDateTime createdAt) {
+    public ScheduleResponse(Long id, String name, String content, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.content = content;
         this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     //객체를 받는 생성자

@@ -40,7 +40,8 @@ public class ScheduleService {
         return new ScheduleResponse(schedule.getId(),
                 schedule.getName(),
                 schedule.getContent(),
-                schedule.getCreatedAt()
+                schedule.getCreatedAt(),
+                schedule.getUpdatedAt()
                 );
         // Response 형태로 반환함
         // 저장된 엔티티 정보를 기반으로 ScheduleResponse 생성 후 반환
@@ -54,7 +55,8 @@ public class ScheduleService {
         return new ScheduleResponse(schedule.getId(),
                 schedule.getName(),
                 schedule.getContent(),
-                schedule.getCreatedAt()
+                schedule.getCreatedAt(),
+                schedule.getUpdatedAt()
                 );
     }
 
@@ -67,7 +69,8 @@ public class ScheduleService {
             scheduleResponses.add(new ScheduleResponse(schedule.getId(),
                     schedule.getName(),
                     schedule.getContent(),
-                    schedule.getCreatedAt()));
+                    schedule.getCreatedAt(),
+                    schedule.getUpdatedAt()));
         }
         return scheduleResponses;
     }
@@ -82,7 +85,8 @@ public class ScheduleService {
         return new ScheduleResponse(schedule.getId(),
                 schedule.getName(),
                 schedule.getContent(),
-                schedule.getCreatedAt());
+                schedule.getCreatedAt(),
+                schedule.getUpdatedAt());
     }
 
     //삭제
